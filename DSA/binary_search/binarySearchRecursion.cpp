@@ -19,5 +19,4 @@ int binarySearchNum(int arr[], int left, int right, int x) {
     if (arr[mid] == x) return mid;
     else if (arr[mid] > x) return binarySearchNum(arr, left, mid - 1, x);
     else return binarySearchNum(arr, mid + 1, right, x);
-
 }

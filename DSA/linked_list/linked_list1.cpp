@@ -1,5 +1,6 @@
 #include <iostream>
 #include <stdlib.h>
+#include <vector>
 using namespace std;
 
 struct Node {
@@ -17,7 +18,7 @@ void insertAtHead(Node*& head, int value) {
     return;
 }
 
-void insertAtTail(Node*& head, int value) {
+void insertAtTail(Node*& head, int value) { // Node*& head is a reference to the head pointer
     Node* newNode = new Node;
     newNode->data = value; // create a new node and assign data to it
     newNode->next = nullptr; // Initialize next pointer to nullptr
@@ -64,6 +65,7 @@ void printLinkedList(Node* head) {
         cout << temp->data << " "; // Print the data of the current node
         temp = temp->next; // Move to the next node
     }
+    cout << endl;
     return;
 }
 
@@ -79,6 +81,13 @@ void reverseList(Node* head){
 
     while(current) {
         Node* nextNode = current->next; // Store the next node
+    }
+}
+
+void printListLocation(Node* head) {
+    Node* current = head;
+    while(current->next){
+        cout << "Node data: " << current->data << ", Location: " << current << endl;;
     }
 }
 
